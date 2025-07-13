@@ -1,0 +1,39 @@
+version: '3.7'
+
+services:
+  streamlit_app:
+    build: ./streamlitapp
+    container_name: fileupload
+    ports:
+      - 8000:5000
+    volumes:
+      - uploads:/tmp/uploads
+      # - /var/run/docker:/var/run/docker 
+    networks:
+      sandbox_net:
+        ipv4_address: 172.10.1.2
+  
+  dispatcher:
+    container_name: dispatcher
+    build: ./dispatcher
+    depends_on:
+      - streamlit_app
+    volumes:
+      - uploads:/tmp/uploads
+      - /var/run/docker.sock:/var/run/docker.sock
+    
+
+networks:
+  sandbox_net:
+    name: sandbox_net
+    driver: bridge
+    ipam:
+      config:
+        - subnet: "172.10.1.0/24"
+
+
+volumes:
+  uploads:
+    name: "streamlit-uploads"
+  outputs:
+    name: "sandbox-output"
