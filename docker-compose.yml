@@ -2,12 +2,13 @@ version: '3.8'
 
 services:
   streamlit_app:
-    build: ./streamlitapp
+    build: ./uploader
     container_name: fileupload
     ports:
-      - 8000:5000
+      - "5000:5000"
     volumes:
       - uploads:/tmp/uploads
+      - outputs:/sandbox-output:ro  
       # - /var/run/docker:/var/run/docker 
     networks:
       sandbox_net:
@@ -22,6 +23,20 @@ services:
       - uploads:/tmp/uploads
       - /var/run/docker.sock:/var/run/docker.sock
     
+  report:
+    build:
+      context: ./report-generator
+      dockerfile: Dockerfile
+    ports:
+      - "8501:8501"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+    networks:
+      - sandbox_net
+    depends_on:
+      - dispatcher
+
 
 networks:
   sandbox_net:

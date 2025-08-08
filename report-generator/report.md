@@ -1,0 +1,211 @@
+# Analysis Report: 20250805T092852_malicious
+
+**Sample Type:** ELF  
+
+**File Description:** ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=3d75fc4369cba773007f57f4a7463a65032d15b6, for GNU/Linux 3.2.0, not stripped  
+
+## ELF Header```
+
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              DYN (Position-Independent Executable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x11f0
+  Start of program headers:          64 (bytes into file)
+  Start of section headers:          15480 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           56 (bytes)
+  Number of program headers:         13
+  Size of section headers:           64 (bytes)
+  Number of section headers:         31
+  Section header string table index: 30
+
+
+```
+
+## ELF Sections```
+
+There are 31 section headers, starting at offset 0x3c78:
+
+Section Headers:
+  [Nr] Name              Type             Address           Offset
+       Size              EntSize          Flags  Link  Info  Align
+  [ 0]                   NULL             0000000000000000  00000000
+       0000000000000000  0000000000000000           0     0     0
+  [ 1] .interp           PROGBITS         0000000000000318  00000318
+       000000000000001c  0000000000000000   A       0     0     1
+  [ 2] .note.gnu.pr[...] NOTE             0000000000000338  00000338
+       0000000000000020  0000000000000000   A       0     0     8
+  [ 3] .note.gnu.bu[...] NOTE             0000000000000358  00000358
+       0000000000000024  0000000000000000   A       0     0     4
+  [ 4] .note.ABI-tag     NOTE             000000000000037c  0000037c
+       0000000000000020  0000000000000000   A       0     0     4
+  [ 5] .gnu.hash         GNU_HASH         00000000000003a0  000003a0
+       0000000000000024  0000000000000000   A       6     0     8
+  [ 6] .dynsym           DYNSYM           00000000000003c8  000003c8
+       0000000000000318  0000000000000018   A       7     1     8
+  [ 7] .dynstr           STRTAB           00000000000006e0  000006e0
+       0000000000000140  0000000000000000   A       0     0     1
+  [ 8] .gnu.version      VERSYM           0000000000000820  00000820
+       0000000000000042  0000000000000002   A       6     0     2
+  [ 9] .gnu.version_r    VERNEED          0000000000000868  00000868
+       0000000000000040  0000000000000000   A       7     1     8
+  [10] .rela.dyn         RELA             00000000000008a8  000008a8
+       00000000000000c0  0000000000000018   A       6     0     8
+  [11] .rela.plt         RELA             0000000000000968  00000968
+       0000000000000288  0000000000000018  AI       6    24     8
+  [12] .init             PROGBITS         0000000000001000  00001000
+       0000000000000017  0000000000000000  AX       0     0     4
+  [13] .plt              PROGBITS         0000000000001020  00001020
+       00000000000001c0  0000000000000010  AX       0     0     16
+  [14] .plt.got          PROGBITS         00000000000011e0  000011e0
+       0000000000000008  0000000000000008  AX       0     0     8
+  [15] .text             PROGBITS         00000000000011f0  000011f0
+       00000000000004e4  0000000000000000  AX       0     0     16
+  [16] .fini             PROGBITS         00000000000016d4  000016d4
+       0000000000000009  0000000000000000  AX       0     0     4
+  [17] .rodata           PROGBITS         0000000000002000  00002000
+       00000000000001fd  0000000000000000   A       0     0     8
+  [18] .eh_frame_hdr     PROGBITS         0000000000002200  00002200
+       0000000000000054  0000000000000000   A       0     0     4
+  [19] .eh_frame         PROGBITS         0000000000002258  00002258
+       000000000000014c  0000000000000000   A       0     0     8
+  [20] .init_array       INIT_ARRAY       0000000000003dd0  00002dd0
+       0000000000000008  0000000000000008  WA       0     0     8
+  [21] .fini_array       FINI_ARRAY       0000000000003dd8  00002dd8
+       0000000000000008  0000000000000008  WA       0     0     8
+  [22] .dynamic          DYNAMIC          0000000000003de0  00002de0
+       00000000000001e0  0000000000000010  WA       7     0     8
+  [23] .got              PROGBITS         0000000000003fc0  00002fc0
+       0000000000000028  0000000000000008  WA       0     0     8
+  [24] .got.plt          PROGBITS         0000000000003fe8  00002fe8
+       00000000000000f0  0000000000000008  WA       0     0     8
+  [25] .data             PROGBITS         00000000000040d8  000030d8
+       0000000000000010  0000000000000000  WA       0     0     8
+  [26] .bss              NOBITS           00000000000040e8  000030e8
+       0000000000000008  0000000000000000  WA       0     0     1
+  [27] .comment          PROGBITS         0000000000000000  000030e8
+       000000000000001e  0000000000000001  MS       0     0     1
+  [28] .symtab           SYMTAB           0000000000000000  00003108
+       0000000000000648  0000000000000018          29    18     8
+  [29] .strtab           STRTAB           0000000000000000  00003750
+       000000000000040b  0000000000000000           0     0     1
+  [30] .shstrtab         STRTAB           0000000000000000  00003b5b
+       000000000000011a  0000000000000000           0     0     1
+Key to Flags:
+  W (write), A (alloc), X (execute), M (merge), S (strings), I (info),
+  L (link order), O (extra OS processing required), G (group), T (TLS),
+  C (compressed), x (unknown), o (OS specific), E (exclude),
+  D (mbind), l (large), p (processor specific)
+
+
+```
+
+## ENV
+```
+
+{
+  "HOSTNAME": "e4d640d2955f",
+  "PWD": "/",
+  "HOME": "/root",
+  "LANG": "C.UTF-8",
+  "SHLVL": "1",
+  "PATH": "/opt/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+  "_": "/usr/bin/env"
+}
+
+```
+
+## DEPS
+```
+
+[
+  "\tlinux-vdso.so.1 (0x00007f9ac1949000)",
+  "\tlibc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f9ac1744000)",
+  "\t/lib64/ld-linux-x86-64.so.2 (0x00007f9ac194b000)"
+]
+
+```
+
+## SYSCALLS
+```
+
+[
+  "/output/20250805T092852_malicious/strace.47:09:28:52.303802 execve(\"/output/20250805T092852_malicious/malicious\", [\"/output/20250805T092852_maliciou\"...], 0x7ffdc1b94d70 /* 7 vars */) = 0",
+  "/output/20250805T092852_malicious/strace.47:09:28:52.304443 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f52e292b000",
+  "/output/20250805T092852_malicious/strace.47:09:28:52.304600 openat(AT_FDCWD, \"/etc/ld.so.cache\", O_RDONLY|O_CLOEXEC) = 3",
+  "/output/20250805T092852_malicious/strace.47:09:28:52.305204 mmap(NULL, 12906, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f52e2927000",
+  "/output/20250805T092852_malicious/strace.47:09:28:52.305343 openat(AT_FDCWD, \"/lib/x86_64-linux-gnu/libc.so.6\", O_RDONLY|O_CLOEXEC) = 3",
+  "/output/20250805T092852_malicious/strace.47:09:28:52.305423 read(3, \"\\177ELF\\2\\1\\1\\3\\0\\0\\0\\0\\0\\0\\0\\0\\3\\0>\\0\\1\\0\\0\\0p\\236\\2\\0\\0\\0\\0\\0\"..., 832) = 832",
+  "/output/20250805T092852_malicious/strace.47:09:28:52.305599 pread64(3, \"\\6\\0\\0\\0\\4\\0\\0\\0@\\0\\0\\0\\0\\0\\0\\0@\\0\\0\\0\\0\\0\\0\\0@\\0\\0\\0\\0\\0\\0\\0\"..., 840, 64) = 840",
+  "/output/20250805T092852_malicious/strace.47:09:28:52.305727 pread64(3, \"\\6\\0\\0\\0\\4\\0\\0\\0@\\0\\0\\0\\0\\0\\0\\0@\\0\\0\\0\\0\\0\\0\\0@\\0\\0\\0\\0\\0\\0\\0\"..., 840, 64) = 840",
+  "/output/20250805T092852_malicious/strace.47:09:28:52.305781 mmap(NULL, 2055800, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f52e2731000",
+  "/output/20250805T092852_malicious/strace.47:09:28:52.305847 mmap(0x7f52e2759000, 1462272, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x7f52e2759000",
+  "/output/20250805T092852_malicious/strace.47:09:28:52.305923 mmap(0x7f52e28be000, 352256, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x18d000) = 0x7f52e28be000",
+  "/output/20250805T092852_malicious/strace.47:09:28:52.305982 mmap(0x7f52e2914000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1e2000) = 0x7f52e2914000",
+  "/output/20250805T092852_malicious/strace.47:09:28:52.306059 mmap(0x7f52e291a000, 52856, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f52e291a000",
+  "/output/20250805T092852_malicious/strace.47:09:28:52.306218 mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f52e272e000",
+  "/output/20250805T092852_malicious/strace.47:09:28:52.307865 connect(3, {sa_family=AF_INET, sin_port=htons(4444), sin_addr=inet_addr(\"192.0.2.1\")}, 16) = -1 ETIMEDOUT (Connection timed out)",
+  "/output/20250805T092852_malicious/strace.47:09:31:06.702813 write(2, \"connect: Connection timed out\\n\", 30) = 30",
+  "/output/20250805T092852_malicious/strace.47:09:31:06.703285 openat(AT_FDCWD, \"/tmp/.hidden_config\", O_WRONLY|O_CREAT, 0600) = 3",
+  "/output/20250805T092852_malicious/strace.47:09:31:06.706900 write(3, \"malicious_config=1\\n\", 19) = 19",
+  "/output/20250805T092852_malicious/strace.47:09:31:06.715303 mmap(NULL, 4, PROT_READ|PROT_WRITE|PROT_EXEC, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f52e292a000",
+  "/output/20250805T092852_malicious/strace.47:09:31:06.715539 write(1, \"=== Starting malicious_test ===\\n\"..., 331) = 331",
+  "/output/20250805T092852_malicious/strace.48:09:31:06.708340 execve(\"/bin/sh\", [\"sh\", \"-c\", \"echo hacked > /tmp/pwned.txt\"], 0x55f236ed52f0 /* 8 vars */) = 0",
+  "/output/20250805T092852_malicious/strace.48:09:31:06.709322 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f57e30e8000",
+  "/output/20250805T092852_malicious/strace.48:09:31:06.709559 openat(AT_FDCWD, \"/etc/ld.so.cache\", O_RDONLY|O_CLOEXEC) = 3",
+  "/output/20250805T092852_malicious/strace.48:09:31:06.709794 mmap(NULL, 12906, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f57e30e4000",
+  "/output/20250805T092852_malicious/strace.48:09:31:06.709920 openat(AT_FDCWD, \"/lib/x86_64-linux-gnu/libc.so.6\", O_RDONLY|O_CLOEXEC) = 3",
+  "/output/20250805T092852_malicious/strace.48:09:31:06.709991 read(3, \"\\177ELF\\2\\1\\1\\3\\0\\0\\0\\0\\0\\0\\0\\0\\3\\0>\\0\\1\\0\\0\\0p\\236\\2\\0\\0\\0\\0\\0\"..., 832) = 832",
+  "/output/20250805T092852_malicious/strace.48:09:31:06.710079 pread64(3, \"\\6\\0\\0\\0\\4\\0\\0\\0@\\0\\0\\0\\0\\0\\0\\0@\\0\\0\\0\\0\\0\\0\\0@\\0\\0\\0\\0\\0\\0\\0\"..., 840, 64) = 840",
+  "/output/20250805T092852_malicious/strace.48:09:31:06.710246 pread64(3, \"\\6\\0\\0\\0\\4\\0\\0\\0@\\0\\0\\0\\0\\0\\0\\0@\\0\\0\\0\\0\\0\\0\\0@\\0\\0\\0\\0\\0\\0\\0\"..., 840, 64) = 840",
+  "/output/20250805T092852_malicious/strace.48:09:31:06.710335 mmap(NULL, 2055800, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f57e2eee000",
+  "/output/20250805T092852_malicious/strace.48:09:31:06.710412 mmap(0x7f57e2f16000, 1462272, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x7f57e2f16000",
+  "/output/20250805T092852_malicious/strace.48:09:31:06.710500 mmap(0x7f57e307b000, 352256, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x18d000) = 0x7f57e307b000",
+  "/output/20250805T092852_malicious/strace.48:09:31:06.710565 mmap(0x7f57e30d1000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1e2000) = 0x7f57e30d1000",
+  "/output/20250805T092852_malicious/strace.48:09:31:06.710634 mmap(0x7f57e30d7000, 52856, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f57e30d7000",
+  "/output/20250805T092852_malicious/strace.48:09:31:06.710782 mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f57e2eeb000",
+  "/output/20250805T092852_malicious/strace.48:09:31:06.712955 openat(AT_FDCWD, \"/tmp/pwned.txt\", O_WRONLY|O_CREAT|O_TRUNC, 0666) = 3",
+  "/output/20250805T092852_malicious/strace.48:09:31:06.714717 write(1, \"hacked\\n\", 7) = 7"
+]
+
+```
+
+## FLOWS
+```
+
+[
+  {
+    "raw": "================================================================================"
+  },
+  {
+    "raw": "TCP Conversations"
+  },
+  {
+    "raw": "Filter:<No Filter>"
+  },
+  {
+    "raw": "                                                           |       <-      | |       ->      | |     Total     |    Relative    |   Duration   |"
+  },
+  {
+    "raw": "                                                           | Frames  Bytes | | Frames  Bytes | | Frames  Bytes |      Start     |              |"
+  },
+  {
+    "src": "172.10.1.3:38330",
+    "dst": "192.0.2.1:4444",
+    "bytes": "0",
+    "raw": "172.10.1.3:38330           <-> 192.0.2.1:4444                   0 0 bytes        10 800 bytes      10 800 bytes     0.640084000        67.8400"
+  },
+  {
+    "raw": "================================================================================"
+  }
+]
+
+```

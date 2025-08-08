@@ -1,0 +1,5 @@
+streamlit
+openai
+tiktoken
+markdown-it-py
+google-genai
